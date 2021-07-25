@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount_devise_token_auth_for 'Employee', at: 'auth/v1/employee'
+
+  namespace :admin do
+    namespace :v1 do
+      get 'dashboard' => 'dashboard#index'
+    end
+  end
 end

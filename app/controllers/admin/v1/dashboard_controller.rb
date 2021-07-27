@@ -1,6 +1,5 @@
 module Admin::V1
-  class DashboardController < ApplicationController
-    include Authenticable
+  class DashboardController < ApiController
     def index
       render json: { message: 'Uhull' }
     end
